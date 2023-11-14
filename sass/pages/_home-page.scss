@@ -1,15 +1,12 @@
 main {
   #home {
-    background: url(../../assets/neon-background.mp4);
     width: 100%;
     height: 700px;
     display: flex;
     justify-content: center;
     position: relative;
     align-items: center;
-    z-index: -1;
     .neon-video {
-      z-index: -1;
       top: 0;
       left: 0;
       width: 100%;
@@ -1118,11 +1115,11 @@ main {
                 transition: 0.4s;
               }
               input {
+                border-radius: 0;
                 color: $White;
                 font-family: $Clash-Display;
                 height: 30px;
                 width: 350px !important;
-                border: 1px solid $White;
                 background-color: transparent;
                 border: none;
                 border-bottom: 2px solid $White;
