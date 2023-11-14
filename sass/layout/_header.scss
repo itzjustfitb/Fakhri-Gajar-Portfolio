@@ -159,19 +159,22 @@ header {
         gap: 20px;
         .nav-menu {
           transition: 0.4s;
-          background-color: hsla(0, 0%, 0%, 0.75);
+          // background-color: hsla(0, 0%, 0%, 0.75);
           position: fixed;
           top: -100%;
           width: 100vw;
           height: 100vh;
           left: 50%;
+          opacity: 0;
+          visibility: hidden;
           transform: translate(-50%);
           display: flex;
           flex-direction: column;
           justify-content: flex-start;
           align-items: center;
           gap: 40px;
-          backdrop-filter: blur(8px);
+
+          // backdrop-filter: blur(8px);
           i {
             display: flex;
             top: 20px;
@@ -255,6 +258,9 @@ header {
         }
         .nav-hide {
           top: 0;
+          background-color: $Black;
+          visibility: visible;
+          opacity: 1;
         }
         #dark-mode-toggle {
           cursor: pointer;
@@ -265,10 +271,13 @@ header {
           transform: rotate(360deg) scale(1.3);
         }
         #burger-button {
+          transition: 0.4s;
           width: 30px;
+          z-index: 10;
           height: 30px;
           color: $White;
           display: flex;
+          cursor: pointer;
           justify-content: center;
           align-items: center;
         }
