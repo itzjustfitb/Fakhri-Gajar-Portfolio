@@ -276,20 +276,19 @@ header nav .nav-right #burger-button {
   }
   header nav .nav-right .nav-menu {
     transition: 0.4s;
-    background-color: hsla(0, 0%, 0%, 0.75);
     position: fixed;
     top: -100%;
     width: 100vw;
     height: 100vh;
     left: 50%;
+    opacity: 0;
+    visibility: hidden;
     transform: translate(-50%);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     gap: 40px;
-    -webkit-backdrop-filter: blur(8px);
-            backdrop-filter: blur(8px);
   }
   header nav .nav-right .nav-menu i {
     display: flex;
@@ -375,6 +374,9 @@ header nav .nav-right #burger-button {
   }
   header nav .nav-right .nav-hide {
     top: 0;
+    background-color: #000;
+    visibility: visible;
+    opacity: 1;
   }
   header nav .nav-right #dark-mode-toggle {
     cursor: pointer;
@@ -385,10 +387,13 @@ header nav .nav-right #burger-button {
     transform: rotate(360deg) scale(1.3);
   }
   header nav .nav-right #burger-button {
+    transition: 0.4s;
     width: 30px;
+    z-index: 10;
     height: 30px;
     color: #fff;
     display: flex;
+    cursor: pointer;
     justify-content: center;
     align-items: center;
   }
@@ -402,17 +407,14 @@ body {
 }
 
 main #home {
-  background: url(../../assets/neon-background.mp4);
   width: 100%;
   height: 700px;
   display: flex;
   justify-content: center;
   position: relative;
   align-items: center;
-  z-index: -1;
 }
 main #home .neon-video {
-  z-index: -1;
   top: 0;
   left: 0;
   width: 100%;
@@ -1255,11 +1257,11 @@ main #contact .contact-container .contact-article .contact-article-right form .c
   transition: 0.4s;
 }
 main #contact .contact-container .contact-article .contact-article-right form .contact-input input {
+  border-radius: 0;
   color: #fff;
   font-family: "Clash Display", sans-serif;
   height: 30px;
   width: 350px !important;
-  border: 1px solid #fff;
   background-color: transparent;
   border: none;
   border-bottom: 2px solid #fff;
