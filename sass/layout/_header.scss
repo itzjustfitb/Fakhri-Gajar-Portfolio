@@ -1,0 +1,278 @@
+@import "../abstracts/colors";
+header {
+  z-index: 100;
+  position: fixed;
+  width: 100%;
+  height: 88px;
+  display: flex;
+  justify-content: center;
+  transition: 0.4s;
+  nav {
+    width: 80%;
+    height: 88px;
+    display: flex;
+    justify-content: space-between;
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      p {
+        filter: drop-shadow(5px 5px 11px #000000);
+        color: $White;
+        font-weight: 700;
+        font-size: 22px;
+        letter-spacing: 1px;
+      }
+    }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 50px;
+      .nav-menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+        h1,
+        h2,
+        i {
+          display: none;
+        }
+        a {
+          position: relative;
+          text-decoration: none;
+          color: $White;
+          font-weight: 500;
+          font-size: 18px;
+          transition: 0.4s;
+        }
+        a::before {
+          content: "";
+          position: absolute;
+          background-color: $White;
+          width: 0%;
+          height: 2px;
+          transition: 0.4s;
+          left: 0;
+          bottom: -5px;
+        }
+        a:hover:before {
+          width: 35%;
+        }
+        a:last-child::before {
+          width: 0;
+        }
+        a:last-child {
+          background-color: transparent;
+          width: 140px;
+          height: 55px;
+          color: $White;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: 2px solid $White;
+        }
+        a:last-child:hover {
+          border: 2px solid transparent;
+          background-color: $White;
+          color: $Black;
+        }
+      }
+      #dark-mode-toggle {
+        color: $White;
+        cursor: pointer;
+        font-size: 20px;
+        transition: 0.4s;
+      }
+      #dark-mode-toggle:hover {
+        transform: rotate(360deg) scale(1.3);
+      }
+      #burger-button {
+        display: none;
+      }
+    }
+  }
+}
+.shadow-header {
+  box-shadow: 0 1px 16px hsla(0, 0%, 0%, 0.12);
+  background-color: hsla(0, 0%, 0%, 0.95);
+  nav {
+    .nav-right {
+      .nav-menu {
+        a:last-child::before {
+          width: 0;
+        }
+        a:last-child {
+          background-color: $White;
+          width: 140px;
+          height: 55px;
+          color: $Black;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: 2px solid transparent;
+        }
+        a:last-child:hover {
+          border: 2px solid $White;
+          background-color: transparent;
+          color: $White;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  header {
+    display: flex;
+    justify-content: center;
+    nav {
+      position: fixed;
+      width: 80%;
+      height: 88px;
+      display: flex;
+      justify-content: space-between;
+      .nav-left {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        span {
+          width: 32px;
+          height: 32px;
+          background-color: $Black;
+          color: $White;
+          border-radius: 50%;
+          font-weight: 500;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        p {
+          font-weight: 700;
+          font-size: 20px;
+        }
+      }
+      .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        .nav-menu {
+          transition: 0.4s;
+          background-color: hsla(0, 0%, 0%, 0.75);
+          position: fixed;
+          top: -100%;
+          width: 100vw;
+          height: 100vh;
+          left: 50%;
+          transform: translate(-50%);
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: center;
+          gap: 40px;
+          backdrop-filter: blur(8px);
+          i {
+            display: flex;
+            top: 20px;
+            right: 20px;
+            font-size: 25px;
+            color: $White;
+            position: absolute;
+          }
+          h2 {
+            margin-top: 50px;
+            display: flex;
+            color: $White;
+            font-weight: 500;
+          }
+          h1 {
+            font-weight: 700;
+            display: flex;
+            color: $White;
+            font-size: 28px;
+            position: relative;
+          }
+          h1:after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: -25%;
+            background-color: $White;
+            width: 20%;
+            height: 1px;
+          }
+          h1::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: -25%;
+            background-color: $White;
+            width: 20%;
+            height: 1px;
+          }
+          a {
+            position: relative;
+            text-decoration: none;
+            color: $White;
+            font-weight: 500;
+            font-size: 18px;
+            transition: 0.4s;
+          }
+          a::before {
+            content: "";
+            position: absolute;
+            background-color: $White;
+            width: 0%;
+            height: 2px;
+            transition: 0.4s;
+            left: 0;
+            bottom: -5px;
+          }
+          a:hover:before {
+            width: 35%;
+          }
+          a:last-child:hover::before {
+            width: 0%;
+          }
+          a:last-child {
+            background-color: transparent;
+            width: max-content;
+            height: max-content;
+            color: $White;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid transparent;
+          }
+          a:last-child:hover {
+            border: 2px solid transparent;
+            background-color: transparent;
+            color: $White;
+          }
+        }
+        .nav-hide {
+          top: 0;
+        }
+        #dark-mode-toggle {
+          cursor: pointer;
+          font-size: 20px;
+          transition: 0.4s;
+        }
+        #dark-mode-toggle:hover {
+          transform: rotate(360deg) scale(1.3);
+        }
+        #burger-button {
+          width: 30px;
+          height: 30px;
+          color: $White;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+  }
+}
