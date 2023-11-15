@@ -12,6 +12,7 @@
       href="https://api.fontshare.com/v2/css?f[]=clash-display@400,700,500,600&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="./main.css" />
   </head>
   <body>
@@ -49,7 +50,7 @@
           <source src="./assets/neon-background.mp4" type="video/mp4" />
         </video>
         <div class="overlay"></div>
-        <div id="home-container" class="home-container">
+        <div data-aos="fade-up" id="home-container" class="home-container">
           <div class="home-title">
             <h1 id="texts">Fakhri Gajar</h1>
             <h2 class="texts">
@@ -61,9 +62,9 @@
           <button><i class="ri-arrow-down-line"></i></button>
         </div>
       </section>
-      <section id="about">
+      <section id="about" data-aos="fade-up">
         <div class="about-container">
-          <h1 class="about-header" style="color: aliceblue">
+          <h1 data-aos="slide-up" class="about-header">
             <span>About Me.</span>
           </h1>
           <div id="about-description" class="about-description">
@@ -135,7 +136,7 @@
           </div>
         </div>
       </section>
-      <section id="services">
+      <section id="services" data-aos="fade-up">
         <div class="services-container container">
           <h1 class="services-header">
             <span>Services.</span>
@@ -204,13 +205,15 @@
           </div>
         </div>
       </section>
-      <section id="projects">
+      <section id="projects" data-aos="fade-up">
         <div class="projects-container">
-          <h1 class="projects-header"><span>Projects.</span></h1>
+          <h1 class="projects-header">
+            <span>Projects.</span>
+          </h1>
           <div class="project-cards"></div>
         </div>
       </section>
-      <section id="contact">
+      <section id="contact" data-aos="fade-up">
         <div class="contact-container">
           <h1 class="contact-header">
             <span>Contact Us.</span>
@@ -323,15 +326,37 @@
         <div class="footer-left">
           © All Rights Reserved by <a href="#">Fakhri Gajar.</a>
         </div>
-        <div class="footer-right">
+        <nav class="footer-right">
           <a href="#home">Home</a>
           <a href="#about">About</a>
           <a href="#projects">Projects</a>
           <a href="#contact">Contact Me</a>
-        </div>
+        </nav>
       </div>
     </footer>
     <script src="./main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        offset: 400,
+        duration: 1000,
+      });
+    </script>
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+      var Tawk_API = Tawk_API || {},
+        Tawk_LoadStart = new Date();
+      (function () {
+        var s1 = document.createElement("script"),
+          s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = "https://embed.tawk.to/6554af98cec6a912821008e3/1hf9crrc8";
+        s1.charset = "UTF-8";
+        s1.setAttribute("crossorigin", "*");
+        s0.parentNode.insertBefore(s1, s0);
+      })();
+    </script>
+    <!--End of Tawk.to Script-->
   </body>
 </html>
