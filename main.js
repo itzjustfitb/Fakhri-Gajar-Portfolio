@@ -126,17 +126,72 @@ showCards(projects);
 //#region ========== CONTACT ==========
 let contactForm = document.getElementById("contact-form");
 
-const sendMail = (e) => {
-  e.preventDefault();
+const sendMail = () => {
   emailjs.sendForm(
     "service_gynp5l1",
     "template_o54layb",
     "#contact-form",
     "bzj7XofiRWUJhFwDn"
   );
-  console.log("Salam");
 };
+let inputName = document.getElementById("name");
+let inputSubject = document.getElementById("subject");
+let inputEmail = document.getElementById("email");
+let inputMessage = document.getElementById("message");
+let validateDesc = document.getElementById("validate-desc");
+let validateTitle = document.getElementById("validate-title");
+let validation = document.querySelector(".toast");
+let toastTitle = document.querySelector(".toast-title");
+console.log(validateTitle);
 
-contactForm.addEventListener("submit", sendMail);
+let submitBtn = document.getElementById("contact-submit");
+contactForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  if (
+    inputName.value.length > 0 &&
+    inputSubject.value.length > 0 &&
+    inputEmail.value.length > 0 &&
+    inputMessage.value.length
+  ) {
+    validation.classList.add("success");
+    validateTitle.textContent = "Success";
+    validateDesc.textContent = "Message sent successfully";
+    sendMail();
+    resetInputs();
+  } else {
+    validation.classList.add("error");
+    if (inputName.value.length === 0) {
+      validateDesc.textContent = "Please fill your name!";
+    } else if (inputEmail.value.length === 0) {
+      validateDesc.textContent = "Please fill your email!";
+    } else if (inputSubject.value.length === 0) {
+      validateDesc.textContent = "Please fill your subject!";
+    } else if (inputMessage.value.length === 0) {
+      validateDesc.textContent = "Please fill your message!";
+    }
+    validateTitle.textContent = "Error";
+  }
+  validateAnimation();
+});
+
+function validateAnimation() {
+  submitBtn.disabled = true;
+  // validation.style.right = "-100%";
+  setTimeout(() => {
+    submitBtn.disabled = false;
+    // validation.style.right = "-100%";
+    validation.classList.remove("error");
+    validation.classList.remove("success");
+  }, 1500);
+}
+
+function successAnimation() {}
+
+function resetInputs() {
+  inputName.value = "";
+  inputSubject.value = "";
+  inputEmail.value = "";
+  inputMessage.value = "";
+}
 
 //#endregion
