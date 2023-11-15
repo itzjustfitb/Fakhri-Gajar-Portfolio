@@ -35,6 +35,14 @@
         </div>
       </nav>
     </header>
+    <div class="toast">
+      <i class="ri-close-fill"></i>
+      <div class="toast-title">
+        <h1 id="validate-title"></h1>
+        <p id="validate-desc"></p>
+      </div>
+      <div class="load"></div>
+    </div>
     <main>
       <section id="home">
         <video class="neon-video" autoplay loop muted playsinline>
@@ -294,10 +302,16 @@
                   />
                   <label for="message">Your Message</label>
                 </div>
-                <button type="submit" class="contact-submit">
-                  <i class="ri-send-plane-fill"></i>
-                  <p>Submit</p>
-                </button>
+                <div class="validation">
+                  <button
+                    id="contact-submit"
+                    type="submit"
+                    class="contact-submit"
+                  >
+                    <i class="ri-send-plane-fill"></i>
+                    <p>Submit</p>
+                  </button>
+                </div>
               </form>
             </div>
           </div>
