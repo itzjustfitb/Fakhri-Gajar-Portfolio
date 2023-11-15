@@ -127,6 +127,7 @@ main {
 
       .about-header {
         span {
+          color: $White;
           z-index: 5;
           position: relative;
         }
@@ -926,7 +927,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 40px 0;
+    padding: 60px 0;
     .contact-container {
       width: 1280px;
       display: flex;
