@@ -987,9 +987,6 @@ main {
             50% {
               top: 55%;
             }
-            // 100% {
-            //   transform: translateY(40px);
-            // }
           }
           animation: shake 5s infinite;
           border-radius: 5px;
@@ -1146,59 +1143,93 @@ main {
               }
             }
 
-            .contact-submit {
-              position: relative;
-              overflow: hidden;
-              border-radius: 5px;
-              width: 120px;
-              transition: 0.8s;
-              height: 40px;
+            .validation {
               display: flex;
-              justify-content: center;
               align-items: center;
-              gap: 10px;
-              background: linear-gradient(
-                to right top,
-                #7f004e,
-                #8d0054,
-                #9b0059,
-                #a9005e,
-                #b80062,
-                #ae0064,
-                #a40065,
-                #9a0266,
-                #740a5f,
-                #500d53,
-                #2d0b43,
-                #110030
-              );
-              border: none;
-              cursor: pointer;
-              font-family: $Clash-Display;
-              color: $White;
-              i,
-              p {
-                font-size: 18px;
+              gap: 20px;
+              > #validate {
+                font-weight: 700;
+                color: red;
+                animation: validate 0.3s forwards;
+                transition: 1s;
               }
-            }
-            .contact-submit:before {
-              content: "";
-              position: absolute;
-              top: 0;
-              left: -350%;
-              width: 300%;
-              height: 100%;
-              background-color: $White;
-              opacity: 0.2;
-              transform: rotate(45deg);
-              transition: 1.2s;
-            }
-            .contact-submit:after {
-              transition-delay: 0.2s;
-            }
-            .contact-submit:hover::before,
-            .contact-submit:hover::after {
-              left: 100%;
+              @keyframes validate {
+                25% {
+                  transform: translateX(5px);
+                }
+                50% {
+                  transform: translateX(-10px);
+                }
+                75% {
+                  transform: translateX(10px);
+                }
+                100% {
+                  transform: translateX(-5px);
+                }
+              }
+              .contact-submit {
+                transition: 0.4s;
+                position: relative;
+                overflow: hidden;
+                border-radius: 5px;
+                width: 120px;
+                transition: 0.8s;
+                height: 40px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+                background: linear-gradient(
+                  to right top,
+                  #7f004e,
+                  #8d0054,
+                  #9b0059,
+                  #a9005e,
+                  #b80062,
+                  #ae0064,
+                  #a40065,
+                  #9a0266,
+                  #740a5f,
+                  #500d53,
+                  #2d0b43,
+                  #110030
+                );
+                border: none;
+                cursor: pointer;
+                font-family: $Clash-Display;
+                color: $White;
+                i,
+                p {
+                  font-size: 18px;
+                }
+              }
+              .contact-submit:disabled {
+                cursor: not-allowed;
+                background: rgba(255, 255, 255, 0.33);
+                box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+                backdrop-filter: blur(5px);
+                -webkit-backdrop-filter: blur(5px);
+                border: 1px solid rgba(255, 255, 255, 0.3);
+              }
+              .contact-submit:before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: -350%;
+                width: 300%;
+                height: 100%;
+                background-color: $White;
+                opacity: 0.2;
+                transform: rotate(45deg);
+                transition: 1.2s;
+              }
+              .contact-submit:after {
+                transition-delay: 0.2s;
+              }
+              .contact-submit:hover::before,
+              .contact-submit:hover::after {
+                left: 100%;
+              }
             }
             .contact-submit:hover {
               transform: scale(1.05);
