@@ -1291,7 +1291,33 @@ main #contact .contact-container .contact-article .contact-article-right form .c
 main #contact .contact-container .contact-article .contact-article-right form .contact-input input:last-child {
   width: 20%;
 }
-main #contact .contact-container .contact-article .contact-article-right form .contact-submit {
+main #contact .contact-container .contact-article .contact-article-right form .validation {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+main #contact .contact-container .contact-article .contact-article-right form .validation > #validate {
+  font-weight: 700;
+  color: red;
+  animation: validate 0.3s forwards;
+  transition: 1s;
+}
+@keyframes validate {
+  25% {
+    transform: translateX(5px);
+  }
+  50% {
+    transform: translateX(-10px);
+  }
+  75% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(-5px);
+  }
+}
+main #contact .contact-container .contact-article .contact-article-right form .validation .contact-submit {
+  transition: 0.4s;
   position: relative;
   overflow: hidden;
   border-radius: 5px;
@@ -1308,11 +1334,19 @@ main #contact .contact-container .contact-article .contact-article-right form .c
   font-family: "Clash Display", sans-serif;
   color: #fff;
 }
-main #contact .contact-container .contact-article .contact-article-right form .contact-submit i,
-main #contact .contact-container .contact-article .contact-article-right form .contact-submit p {
+main #contact .contact-container .contact-article .contact-article-right form .validation .contact-submit i,
+main #contact .contact-container .contact-article .contact-article-right form .validation .contact-submit p {
   font-size: 18px;
 }
-main #contact .contact-container .contact-article .contact-article-right form .contact-submit:before {
+main #contact .contact-container .contact-article .contact-article-right form .validation .contact-submit:disabled {
+  cursor: not-allowed;
+  background: rgba(255, 255, 255, 0.33);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+main #contact .contact-container .contact-article .contact-article-right form .validation .contact-submit:before {
   content: "";
   position: absolute;
   top: 0;
@@ -1324,11 +1358,11 @@ main #contact .contact-container .contact-article .contact-article-right form .c
   transform: rotate(45deg);
   transition: 1.2s;
 }
-main #contact .contact-container .contact-article .contact-article-right form .contact-submit:after {
+main #contact .contact-container .contact-article .contact-article-right form .validation .contact-submit:after {
   transition-delay: 0.2s;
 }
-main #contact .contact-container .contact-article .contact-article-right form .contact-submit:hover::before,
-main #contact .contact-container .contact-article .contact-article-right form .contact-submit:hover::after {
+main #contact .contact-container .contact-article .contact-article-right form .validation .contact-submit:hover::before,
+main #contact .contact-container .contact-article .contact-article-right form .validation .contact-submit:hover::after {
   left: 100%;
 }
 main #contact .contact-container .contact-article .contact-article-right form .contact-submit:hover {
@@ -3312,4 +3346,82 @@ footer .footer-container .footer-right a {
     text-decoration: none;
     color: #fff;
   }
+}
+.toast {
+  position: fixed;
+  background-color: #fff;
+  z-index: 100;
+  right: -100%;
+  top: 5%;
+  transition: 0.4s;
+  width: 300px;
+  height: 60px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+.toast i {
+  margin-left: 20px;
+  font-size: 22px;
+  padding: 5px;
+  border-radius: 50%;
+  color: #fff;
+}
+.toast .toast-title {
+  display: flex;
+  flex-direction: column;
+}
+.toast .toast-title h1 {
+  font-size: 24px;
+  font-weight: 500;
+}
+.toast .load {
+  height: 5px;
+  position: absolute;
+  border-radius: 5px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  bottom: 0;
+}
+@keyframes load {
+  100% {
+    width: 100%;
+  }
+  0% {
+    width: 0%;
+  }
+}
+
+.error {
+  right: 2%;
+  top: 5%;
+  border-left: 5px solid red;
+}
+.error i {
+  background-color: red;
+}
+.error .toast-title h1 {
+  color: red;
+}
+.error .load {
+  animation: load 2s;
+  background-color: red;
+}
+
+.success {
+  right: 2%;
+  top: 5%;
+  border-left: 5px solid green;
+}
+.success i {
+  background-color: green;
+}
+.success .toast-title h1 {
+  color: green;
+}
+.success .load {
+  animation: load 2s;
+  background-color: green;
 }
