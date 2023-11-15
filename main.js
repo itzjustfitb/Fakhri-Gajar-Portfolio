@@ -142,7 +142,6 @@ let validateDesc = document.getElementById("validate-desc");
 let validateTitle = document.getElementById("validate-title");
 let validation = document.querySelector(".toast");
 let toastTitle = document.querySelector(".toast-title");
-console.log(validateTitle);
 
 let submitBtn = document.getElementById("contact-submit");
 contactForm.addEventListener("submit", (e) => {
