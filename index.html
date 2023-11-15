@@ -253,25 +253,45 @@
               </div>
             </div>
             <div class="contact-article-right">
-              <form>
+              <form id="contact-form">
                 <div class="contact-input">
                   <i class="ri-user-line"></i>
-                  <input id="name" type="text" placeholder="Your Name" />
-                  <label for="name">Your Surname</label>
-                </div>
-                <div class="contact-input">
-                  <i class="ri-user-line"></i>
-                  <input id="surname" type="text" placeholder="Your Surname" />
-                  <label for="surname">Your Name</label>
+                  <input
+                    name="name"
+                    id="name"
+                    type="text"
+                    placeholder="Your Name"
+                  />
+                  <label for="name">Your Name</label>
                 </div>
                 <div class="contact-input">
                   <i class="ri-mail-line"></i>
-                  <input id="email" type="text" placeholder="Your E-mail" />
+                  <input
+                    name="email"
+                    id="email"
+                    type="email"
+                    placeholder="Your E-mail"
+                  />
                   <label for="email">Your E-mail</label>
                 </div>
                 <div class="contact-input">
+                  <i class="ri-ball-pen-line"></i>
+                  <input
+                    name="subject"
+                    id="subject"
+                    type="text"
+                    placeholder="Your Subject"
+                  />
+                  <label for="subject">Your Subject</label>
+                </div>
+                <div class="contact-input">
                   <i class="ri-message-2-line"></i>
-                  <input id="message" type="text" placeholder="Your Message" />
+                  <input
+                    name="message"
+                    id="message"
+                    type="text"
+                    placeholder="Your Message"
+                  />
                   <label for="message">Your Message</label>
                 </div>
                 <button type="submit" class="contact-submit">
@@ -298,5 +318,6 @@
       </div>
     </footer>
     <script src="./main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   </body>
 </html>
