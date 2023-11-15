@@ -23,6 +23,23 @@ function showHeader() {
 }
 
 window.addEventListener("scroll", showHeader);
+
+const links = document.querySelectorAll("nav a");
+
+links.forEach((link) => {
+  link.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    const targetId = link.getAttribute("href").substring(1);
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+      targetElement.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+  });
+});
+
 //#endregion
 //#region ========== ABOUT ==========
 //Movement Animation to happen
@@ -106,19 +123,20 @@ function showCards(arr) {
 
 showCards(projects);
 //#endregion
+//#region ========== CONTACT ==========
+let contactForm = document.getElementById("contact-form");
 
-const links = document.querySelectorAll("nav a");
+const sendMail = (e) => {
+  e.preventDefault();
+  emailjs.sendForm(
+    "service_gynp5l1",
+    "template_o54layb",
+    "#contact-form",
+    "bzj7XofiRWUJhFwDn"
+  );
+  console.log("Salam");
+};
 
-links.forEach((link) => {
-  link.addEventListener("click", function (e) {
-    e.preventDefault();
+contactForm.addEventListener("submit", sendMail);
 
-    const targetId = link.getAttribute("href").substring(1);
-    const targetElement = document.getElementById(targetId);
-    if (targetElement) {
-      targetElement.scrollIntoView({
-        behavior: "smooth",
-      });
-    }
-  });
-});
+//#endregion
