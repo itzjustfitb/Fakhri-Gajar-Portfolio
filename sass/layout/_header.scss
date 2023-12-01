@@ -79,15 +79,6 @@ header {
           color: $Black;
         }
       }
-      #dark-mode-toggle {
-        color: $White;
-        cursor: pointer;
-        font-size: 20px;
-        transition: 0.4s;
-      }
-      #dark-mode-toggle:hover {
-        transform: rotate(360deg) scale(1.3);
-      }
       #burger-button {
         display: none;
       }
@@ -261,14 +252,6 @@ header {
           background-color: $Black;
           visibility: visible;
           opacity: 1;
-        }
-        #dark-mode-toggle {
-          cursor: pointer;
-          font-size: 20px;
-          transition: 0.4s;
-        }
-        #dark-mode-toggle:hover {
-          transform: rotate(360deg) scale(1.3);
         }
         #burger-button {
           transition: 0.4s;

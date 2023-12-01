@@ -91,8 +91,8 @@ let projects = [
     image: "./assets/project-4.png",
     title: "FITB NotePad",
     subtitle: "TODO APP",
-    githubLink: "https://github.com/itzjustfitb/FITB-NFT-Marketplace",
-    liveView: "https://fitb-nft.netlify.app/",
+    githubLink: "https://github.com/itzjustfitb/FITB-NotePad",
+    liveView: "https://fitb-notepad.netlify.app/",
   },
 ];
 
